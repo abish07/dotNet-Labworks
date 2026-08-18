@@ -1,0 +1,37 @@
+@model Lab14.Models.SimpleIntrest
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <form asp-action="Create">
+        <div>
+            <label asp-for="Principal">Enter Priciple</label>
+            <input type="text" asp-for="Principal"/>
+            <span asp-validation-for="Principal"></span>
+        </div>
+        <div>
+            <label asp-for="Time">Enter Time</label>
+            <input type="text" asp-for="Time"/>
+            <span asp-validation-for="Time"></span>
+        </div>
+        <div>
+            <label asp-for="Rate">Enter Rate</label>
+            <input type="text" asp-for="Rate"/>
+            <span asp-validation-for="Rate"></span>
+        </div>
+        <div>
+            <button type="submit">Calculate Interest</button>
+        </div>
+    </form>
+</head>
+<body>
+<div>
+      
+</div>
+</body>
+</html>
