@@ -1,0 +1,105 @@
+﻿@model Lab15.Models.Student
+
+@{
+ViewData["Title"] = "jQuery Validation";
+}
+
+<h2>jQuery Validation Example</h2>
+
+<form asp-action="Index" method="post" id="myForm">
+
+    <div>
+        <label>Username:</label>
+        <input asp-for="Username" id="Username" />
+    </div>
+
+    <br />
+
+    <div>
+        <label>Password:</label>
+        <input asp-for="Password" type="password" id="Password" />
+    </div>
+
+    <br />
+
+    <div>
+        <label>Confirm Password:</label>
+        <input asp-for="ConfirmPassword" type="password" id="ConfirmPassword" />
+    </div>
+
+    <br />
+
+    <div>
+        <label>Phone Number:</label>
+        <input asp-for="Phone" id="Phone" />
+    </div>
+
+    <br />
+
+    <button type="submit">Submit</button>
+
+</form>
+
+@if (ViewBag.Message != null)
+{
+<p>@ViewBag.Message</p>
+}
+
+@section Scripts
+{
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.21.0/dist/jquery.validate.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        $("#myForm").validate({
+
+            rules: {
+                Username: {
+                    required: true
+                },
+
+                Password: {
+                    required: true,
+                    minlength: 8,
+                    maxlength: 8
+                },
+
+                ConfirmPassword: {
+                    required: true,
+                    equalTo: "#Password"
+                },
+
+                Phone: {
+                    required: true,
+                    number: true
+                }
+            },
+
+            messages: {
+                Username: {
+                    required: "Username is required"
+                },
+
+                Password: {
+                    required: "Password is required",
+                    minlength: "Password must be exactly 8 characters",
+                    maxlength: "Password must be exactly 8 characters"
+                },
+
+                ConfirmPassword: {
+                    required: "Please confirm your password",
+                    equalTo: "Passwords do not match"
+                },
+
+                Phone: {
+                    required: "Phone number is required",
+                    number: "Please enter a valid number"
+                }
+            }
+        });
+
+    });
+</script>
+}
