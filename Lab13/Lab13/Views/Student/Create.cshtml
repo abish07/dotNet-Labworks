@@ -1,0 +1,62 @@
+@model Lab13.Models.Student
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <form asp-action="Create" method="post">
+        <div>
+            <h1>Registration Form</h1>
+        </div>
+        <div>
+            <div>
+                <label asp-for="Name">Enter Name</label>
+                <input type="text" asp-for="Name"/>
+                <span asp-validation-for="Name"></span>
+            </div>
+            <div>
+                <label asp-for="Age">Enter Age</label>
+                <input type="number" asp-for="Age"/>
+                <span asp-validation-for="Age"></span>
+            </div>
+            <div>
+                <label asp-for="Email">Enter Email</label>
+                <input type="email" asp-for="Email"/>
+                <span asp-validation-for="Email"></span>
+            </div>
+            <div>
+                <label asp-for="DateOfBirth">Enter DateOfBirth</label>
+                <input type="date" asp-for="DateOfBirth"/>
+                <span asp-validation-for="DateOfBirth"></span>
+            </div>
+            <div>
+                <label asp-for="Salary">Enter Salary</label>
+                <input type="text" asp-for="Salary"/>
+                <span asp-validation-for="Salary"></span>
+            </div>
+            <div>
+                <label asp-for="Password">Enter Password</label>
+                <input type="password" asp-for="Password"/>
+                <span asp-validation-for="Password"></span>
+            </div>
+            <div>
+                <label asp-for="ConfirmPassword">Enter ConfirmPassword</label>
+                <input type="password" asp-for="ConfirmPassword"/>
+                <span asp-validation-for="ConfirmPassword"></span>
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+</head>
+<body>
+<div>
+      
+</div>
+</body>
+</html>
